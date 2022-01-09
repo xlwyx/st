@@ -46,7 +46,7 @@ static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 1;
+int allowaltscreen = 0;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
@@ -70,13 +70,13 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 3;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
-static int bellvolume = 0;
+static int bellvolume = 4;
 
 /* default TERM value */
 char *termname = "st-256color";
@@ -100,22 +100,23 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
+	/* 9 normal colors */
 	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
+	"red1",
+	"green1",
+	"pink2",
+	"yellow2",
+        "orange1",
+	"magenta4",
+	"cyan4",
 	"gray50",
+	
+	/* 8 bright colors */
+	"gray90",
 	"red",
 	"green",
 	"yellow",
-	"#5c5cff",
+	"purple",
 	"magenta",
 	"cyan",
 	"white",
@@ -125,15 +126,15 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+	
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 3;
+unsigned int defaultbg = 8;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -144,7 +145,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 7;
 
 /*
  * Default columns and rows numbers
@@ -157,8 +158,8 @@ static unsigned int rows = 24;
  * Default colour and shape of the mouse cursor
  */
 static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 7;
-static unsigned int mousebg = 0;
+static unsigned int mousefg = 6;
+static unsigned int mousebg = 5;
 
 /*
  * Color used to display font attributes when fontconfig selected a font which
